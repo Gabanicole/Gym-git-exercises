@@ -96,3 +96,499 @@ Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
 $
 
 ```
+
+### Exercises 2
+
+```bash
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git add .
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git commit -m "the message after done"
+[dev fbefc47] the message after done
+ 1 file changed, 98 deletions(-)    
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git push origin dev
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (3/3), 263 bytes | 65.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Gabanicole/Gym-git-exercises.git
+   4024ecc..fbefc47  dev -> dev
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (main)
+$ git add .
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (main)
+$ git commit -m "done with the readme me copying"
+[main eaafae8] done with the readme me copying
+ 1 file changed, 68 insertions(+)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)        home.html       
+d" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash list
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git add home.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash
+Saved working directory and index state WIP on dev: fbefc47 the message after done      
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git status
+On branch dev
+Untracked files:
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git add about.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash
+Saved working directory and index state WIP on dev: fbefc47 the message after done      
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git status
+On branch dev   
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        team.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git add team.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git add team.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash
+Saved working directory and index state WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+stash@{2}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git status
+On branch dev
+nothing to commit, working tree clean
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+stash@{2}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (7539bf11941289729ee5be630a4f5c46a0e3cef5)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git status list
+On branch dev
+nothing to commit, working tree clean
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash pop stash@{0}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   team.html
+
+Dropped stash@{0} (0163ac4d77a5b77fc5365f06f47cdbac698f0595)    
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash pop stash@{0}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+        new file:   team.html
+
+Dropped stash@{0} (d0fa02f5d56b30f1ac7c222a261e678f5728ef4e)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+        new file:   team.html
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed) 
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    about.html
+        deleted:    home.html
+        deleted:    team.html
+
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+        new file:   team.html
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed) 
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    about.html
+        deleted:    home.html
+        deleted:    team.html
+
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git add home.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash
+Saved working directory and index state WIP on dev: fbefc47 the 
+message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)        about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git add about.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash
+Saved working directory and index state WIP on dev: fbefc47 the 
+message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)        team.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git add team.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash
+Saved working directory and index state WIP on dev: fbefc47 the 
+message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+stash@{2}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (5884056750f84fd14708efe8792cbb6a990a8b93)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash pop stash@{0}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   team.html
+
+Dropped stash@{0} (4b39cb6a12561e1e5f5e6c97badd9d3cf79f1f54)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash pop
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git add home.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash
+No local changes to save
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git add Home.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash 
+Saved working directory and index state WIP on dev: fbefc47 the 
+message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git add home.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
+$ git stash
+Saved working directory and index state WIP on dev: fbefc47 the 
+message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)        about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git add about.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash
+Saved working directory and index state WIP on dev: fbefc47 the 
+message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)        team.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git add team.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash
+Saved working directory and index state WIP on dev: fbefc47 the 
+message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+stash@{2}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stah pop stash@{1}
+git: 'stah' is not a git command. See 'git --help'.
+
+The most similar command is
+        stash
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (f524f05b972759d81d345768a9b2f65a04c1f3b4)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+stash@{1}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Dropped stash@{1} (9934139d547f41d49f31aed273e84f684d2699d8)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git add --all
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git commit -m "done with home and about"
+[dev 95fb750] done with home and about
+ 2 files changed, 24 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git push --set-upstream origin dev
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 568 bytes | 113.00 KiB/s, done.    
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:Gabanicole/Gym-git-exercises.git
+   fbefc47..95fb750  dev -> dev
+branch 'dev' set up to track 'origin/dev'.
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash list
+stash@{0}: WIP on dev: fbefc47 the message after done
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git stash pop
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped refs/stash@{0} (1f979039f6289577ad969aa1daebf6551314a536)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git rest --hard
+git: 'rest' is not a git command. See 'git --help'.
+
+The most similar commands are
+        restore
+        reset
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git reset --hard
+HEAD is now at 95fb750 done with home and about
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+nothing to commit, working tree clean
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)    
+$
+
+```
