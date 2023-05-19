@@ -555,3 +555,58 @@ Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
 $
 
 ```
+
+## bundle 2
+
+### exercises 1
+```bash
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (main)
+$ git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (ft/bundle-2)
+$ git status
+On branch ft/bundle-2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        service.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (ft/bundle-2)
+$ git add service.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (ft/bundle-2)
+$ git add --all
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (ft/bundle-2)
+$ git commit -m"create service page"
+[ft/bundle-2 b0c2e78] create service page
+ 1 file changed, 14 insertions(+)
+ create mode 100644 service.html
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (ft/bundle-2)
+$ git status
+On branch ft/bundle-2
+nothing to commit, working tree clean
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (ft/bundle-2)
+$ git push --set-upstream origin ft/bundle-2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 500 bytes | 250.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/Gabanicole/Gym-git-exercises/pull/new/ft/bundle-2
+remote:
+To github.com:Gabanicole/Gym-git-exercises.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
+
+Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (ft/bundle-2)
+$
+
+```
