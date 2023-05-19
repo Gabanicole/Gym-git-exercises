@@ -102,43 +102,6 @@ $
 ```bash
 
 Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
-$ git add .
-
-Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
-$ git commit -m "the message after done"
-[dev fbefc47] the message after done
- 1 file changed, 98 deletions(-)    
-
-Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
-$ git push origin dev
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (1/1), done.
-Writing objects: 100% (3/3), 263 bytes | 65.00 KiB/s, done.
-Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-To github.com:Gabanicole/Gym-git-exercises.git
-   4024ecc..fbefc47  dev -> dev
-
-Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
-$ git checkout main
-Switched to branch 'main'
-Your branch is up to date with 'origin/main'.
-
-Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (main)
-$ git add .
-
-Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (main)
-$ git commit -m "done with the readme me copying"
-[main eaafae8] done with the readme me copying
- 1 file changed, 68 insertions(+)
-
-Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (main)
-$ git push origin main
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-
-Nicole@DESKTOP-I5FEMIP MINGW64 ~/desktop/git-exercises (dev)
 $ git status
 On branch dev
 Untracked files:
